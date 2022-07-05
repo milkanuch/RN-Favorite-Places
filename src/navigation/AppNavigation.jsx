@@ -6,6 +6,7 @@ import AddPlace from "../screens/AddPlaces/AddPlaces";
 import AllPlaces from "../screens/AllPlaces/AllPlaces";
 import IconButton from "../components/UI/IconButton/IconButton";
 import { Colors } from "../constants/Colors";
+import Map from "../screens/Map/Map";
 
 
 export default function AppNavigation() { 
@@ -17,13 +18,9 @@ export default function AppNavigation() {
             <NavigationContainer>
                 <Stack.Navigator 
                     screenOptions={{
-                        headerStyle: { 
-                            backgroundColor: Colors.primary500,
-                        },
+                        headerStyle: { backgroundColor: Colors.primary500},
                         headerTintColor: Colors.blue700,
-                        contentStyle: {
-                            backgroundColor: Colors.primary400
-                        }
+                        contentStyle: {backgroundColor: Colors.primary400}
                     }}
                 >
                     <Stack.Screen 
@@ -46,6 +43,10 @@ export default function AppNavigation() {
                         options={{
                             title: 'Add a new Place'
                         }}
+                    />
+                    <Stack.Screen 
+                        name="Map"
+                        component={Map}
                     />
                 </Stack.Navigator>
             </NavigationContainer>

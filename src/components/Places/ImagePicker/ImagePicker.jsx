@@ -42,7 +42,7 @@ const ImagePicker = () => {
                 {
                     imageUri ? 
                     <Image source={{uri: imageUri}}  style={styles.image} /> : 
-                    <Text>No image taken yet.</Text>
+                    <Text style={styles.errorText}>No image taken yet.</Text>
                 }   
             </View>
             <OutlinedButton icon="camera" onPress={takeImageHandler}>Take Image</OutlinedButton>
