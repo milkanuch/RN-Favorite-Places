@@ -7,6 +7,7 @@ import styles from "./ImagePicker.style";
 const ImagePicker = () => {
     const [cameraPermissionInfo,requestPermission] = useCameraPermissions();
     const [imageUri,setImageUri] = useState('');
+    
     const verifyPermission = async () => { 
         if(cameraPermissionInfo.status === PermissionStatus.UNDETERMINED) { 
             const permissionResponse = await requestPermission();
