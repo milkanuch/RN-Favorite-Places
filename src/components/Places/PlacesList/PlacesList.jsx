@@ -6,7 +6,7 @@ const PlacesList = ({places}) => {
     if(!places || places.length == 0){ 
         return (
             <View style={styles.fallbackContainer}>
-                <Text style={styles.fallbackText}>No Places added yet - start adding some1.</Text>
+                <Text style={styles.fallbackText}>No Places added yet - start adding some!!!.</Text>
             </View>
         );
     }
