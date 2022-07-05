@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { Colors } from "../../../constants/Colors";
 
 export default StyleSheet.create({
     fallbackContainer: { 
@@ -7,6 +8,7 @@ export default StyleSheet.create({
         justifyContent: "center"
     },
     fallbackText: { 
-        fontSize: 16
+        fontSize: 16,
+        color: Colors.accent500
     }
 });

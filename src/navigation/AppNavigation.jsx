@@ -5,6 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import AddPlace from "../screens/AddPlaces/AddPlaces";
 import AllPlaces from "../screens/AllPlaces/AllPlaces";
 import IconButton from "../components/UI/IconButton/IconButton";
+import { Colors } from "../constants/Colors";
 
 
 export default function AppNavigation() { 
@@ -14,11 +15,22 @@ export default function AppNavigation() {
         <>
             <StatusBar style="dark" />
             <NavigationContainer>
-                <Stack.Navigator>
+                <Stack.Navigator 
+                    screenOptions={{
+                        headerStyle: { 
+                            backgroundColor: Colors.primary500,
+                        },
+                        headerTintColor: Colors.blue700,
+                        contentStyle: {
+                            backgroundColor: Colors.primary400
+                        }
+                    }}
+                >
                     <Stack.Screen 
                         name="AllPlaces" 
                         component={AllPlaces} 
                         options={({navigation}) => ({
+                            title: "Your Favorite Places",
                             headerRight: ({tintColor}) => <IconButton 
                                 icon="add"
                                 size={24}
@@ -31,6 +43,9 @@ export default function AppNavigation() {
                     <Stack.Screen 
                         name="AddPlace" 
                         component={AddPlace}
+                        options={{
+                            title: 'Add a new Place'
+                        }}
                     />
                 </Stack.Navigator>
             </NavigationContainer>
