@@ -10,5 +10,8 @@ export default StyleSheet.create({
     fallbackText: { 
         fontSize: 16,
         color: Colors.accent500
+    },
+    list: {
+        margin: 24
     }
 });

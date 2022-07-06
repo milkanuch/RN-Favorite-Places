@@ -3,11 +3,11 @@ import styles from "./PlaceListItem.style";
 
 const PlacesListItem = ({place,onSelect}) => { 
     return (
-        <Pressable onPress={onSelect}>
-            <Image source={{ uri: place.imageUri }}/>
-            <View>
-                <Text>{place.title}</Text>
-                <Text>{place.address}</Text>
+        <Pressable onPress={onSelect} style={(pressed) => [styles.item,styles.pressed && pressed]}>
+            <Image source={{ uri: place.imageUri }} style={styles.image}/>
+            <View style={styles.info}>
+                <Text style={styles.title}>{place.title}</Text>
+                <Text style={styles.address}>{place.address}</Text>
             </View>
         </Pressable>
     );

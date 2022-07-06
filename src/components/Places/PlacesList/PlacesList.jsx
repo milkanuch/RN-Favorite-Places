@@ -15,6 +15,7 @@ const PlacesList = ({places}) => {
             data={places}
             keyExtractor={(item) => item.id}
             renderItem={({item}) => <PlacesListItem place={item} />}
+            style={styles.list}
         />
     );
 }
