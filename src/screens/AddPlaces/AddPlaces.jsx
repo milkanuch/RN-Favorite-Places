@@ -1,10 +1,10 @@
 import PlaceForm from "../../components/Places/PlaceForm/PlaceForm";
+import { insertPlaces } from "../../utils/database";
 
 export default function AddPlace({ navigation }) { 
-    function createPlaceHandler(place) { 
-        navigation.navigate('AllPlaces',{
-            place: place
-        });
+    async function createPlaceHandler(place) { 
+        await insertPlaces(place);
+        navigation.navigate('AllPlaces');
     }
     return ( 
         <PlaceForm onCreatePlace={createPlaceHandler} />
