@@ -4,7 +4,7 @@ import { Alert, Image, Text, View } from "react-native";
 import OutlinedButton from "../../UI/OutlinedButton/OutlinedButton";
 import styles from "./ImagePicker.style";
 
-const ImagePicker = () => {
+const ImagePicker = ({ onImageTaken }) => {
     const [cameraPermissionInfo,requestPermission] = useCameraPermissions();
     const [imageUri,setImageUri] = useState('');
     
@@ -33,7 +33,8 @@ const ImagePicker = () => {
             quality: 0.5
         });
         
-        setImageUri(image.uri)
+        setImageUri(image.uri);
+        onImageTaken(image.uri);
     }
 
     return ( 
