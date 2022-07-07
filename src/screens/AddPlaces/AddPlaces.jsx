@@ -6,6 +6,7 @@ export default function AddPlace({ navigation }) {
         await insertPlaces(place);
         navigation.navigate('AllPlaces');
     }
+    
     return ( 
         <PlaceForm onCreatePlace={createPlaceHandler} />
     );
