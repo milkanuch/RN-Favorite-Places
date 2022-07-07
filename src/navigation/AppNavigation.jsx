@@ -7,6 +7,7 @@ import AllPlaces from "../screens/AllPlaces/AllPlaces";
 import IconButton from "../components/UI/IconButton/IconButton";
 import { Colors } from "../constants/Colors";
 import Map from "../screens/Map/Map";
+import PlaceDetails from "../screens/PlaceDetails/PlaceDetails";
 
 
 export default function AppNavigation() { 
@@ -47,6 +48,13 @@ export default function AppNavigation() {
                     <Stack.Screen 
                         name="Map"
                         component={Map}
+                    />
+                    <Stack.Screen 
+                        name="PlaceDetails"
+                        component={PlaceDetails}
+                        options={{
+                            title:'Loading Place...'
+                        }}
                     />
                 </Stack.Navigator>
             </NavigationContainer>
